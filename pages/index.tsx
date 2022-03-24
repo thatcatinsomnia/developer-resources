@@ -35,8 +35,10 @@ const Home: NextPage<Props> = ({ resources }) => {
 }
 
 export const getServerSideProps = async () => {
-  const res = await prisma.resource.findMany();
-  
+  const res = await prisma.resource.findMany({
+    include: { category: true }
+  });
+
   // use superjson to prevent Date Object cant serialized problem in nextjs,
   // check the link: https://github.com/vercel/next.js/issues/11993 
   const { json, meta } = superjson.serialize(res);
