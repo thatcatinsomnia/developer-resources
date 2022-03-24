@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import type Resource from '../interface/Resource';
-import { Container, SimpleGrid, Title, MediaQuery } from '@mantine/core';
+import { Container, SimpleGrid, Title, MediaQuery, createStyles } from '@mantine/core';
 import ResourceCard from '../components/ResourceCard';
 import superjson from 'superjson';
 import prisma from '../lib/prisma';
@@ -9,18 +9,27 @@ interface Props {
   resources: Resource[];
 }
 
+const useStyles = createStyles(theme => ({
+  container: {
+    [theme.fn.largerThan('xs')]: { 
+      paddingLeft: '40px',
+      paddingRight: '40px'
+    }
+  },
+
+  title: {
+    [theme.fn.largerThan('xs')]: {
+      textAlign: 'left'
+    }
+  }
+}));
+
 const Home: NextPage<Props> = ({ resources }) => {
+  const { classes } = useStyles();
+
   return (
-    <Container px="lg" py="lg" size="xl" sx={theme => ({
-      [theme.fn.largerThan('xs')]: { 
-        paddingLeft: '40px',
-        paddingRight: '40px'
-      }
-    })}>
-      <MediaQuery largerThan="xs" styles={{textAlign: 'left'}}>
-        <Title py={24} mb={16} order={2} align="center">Developer Resources</Title>
-      </MediaQuery>
-      
+    <Container px="lg" py="lg" size="xl" className={classes.container}>
+      <Title py={24} mb={16} order={2} align="center" className={classes.title}>Developer Resources</Title>
       <SimpleGrid cols={4} spacing="xl"
         breakpoints={[
           { maxWidth: 'lg', cols: 3 },
