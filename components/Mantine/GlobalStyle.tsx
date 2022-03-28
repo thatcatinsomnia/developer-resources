@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { Global } from '@mantine/core';
 
-const GlobalStyle: NextPage = () => {
+const GlobalStyle = () => {
   return (
     <Global styles={theme => ({
       '*, *::before, *::after': {
