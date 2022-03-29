@@ -1,15 +1,15 @@
 import type { NextPage } from 'next';
-import type Resource from '../interface/Resource';
-import SimpleGridWrapper from '../components/SimpleGridWrapper';
-import ResourceCard from '../components/ResourceCard';
+import type Resource from '../../interface/Resource';
+import SimpleGridWrapper from '../../components/SimpleGridWrapper';
+import ResourceCard from '../../components/ResourceCard';
 import superjson from 'superjson';
-import prisma from '../lib/prisma';
+import prisma from '../../lib/prisma';
 
 interface Props {
   resources: Resource[];
 }
 
-const Home: NextPage<Props> = ({ resources }) => {
+const Fonts: NextPage<Props> = ({ resources }) => {
   return (
     <SimpleGridWrapper>
       {resources.map(resource => <ResourceCard resource={resource} key={resource.id} />)}
@@ -19,7 +19,12 @@ const Home: NextPage<Props> = ({ resources }) => {
 
 export const getServerSideProps = async () => {
   const res = await prisma.resource.findMany({
-    include: { category: true }
+    include: { category: true },
+    where: {
+      category: {
+        name: 'fonts'
+      }
+    }
   });
 
   // use superjson to prevent Date Object cant serialized problem in nextjs,
@@ -33,4 +38,4 @@ export const getServerSideProps = async () => {
   }
 };
 
-export default Home;
+export default Fonts;
