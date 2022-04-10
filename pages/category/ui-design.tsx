@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import type Resource from '../../interface/Resource';
-import SimpleGridWrapper from '../../components/SimpleGridWrapper';
+import ContentWrapper from '../../components/ContentWrapper';
 import ResourceCard from '../../components/ResourceCard';
 import superjson from 'superjson';
 import prisma from '../../lib/prisma';
@@ -11,15 +11,18 @@ interface Props {
 
 const UIDesign: NextPage<Props> = ({ resources }) => {
   return (
-    <SimpleGridWrapper>
+    <ContentWrapper>
       {resources.map(resource => <ResourceCard resource={resource} key={resource.id} />)}
-    </SimpleGridWrapper>
+    </ContentWrapper>
   );
 }
 
 export const getServerSideProps = async () => {
   const res = await prisma.resource.findMany({
-    include: { category: true },
+    include: { 
+      category: true,
+      tags: true
+    },
     where: {
       category: {
         name: 'ui-design'
@@ -30,7 +33,7 @@ export const getServerSideProps = async () => {
   // use superjson to prevent Date Object cant serialized problem in nextjs,
   // check the link: https://github.com/vercel/next.js/issues/11993 
   const { json, meta } = superjson.serialize(res);
-
+  
   return {
     props: {
       resources: json
