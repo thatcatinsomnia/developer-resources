@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { MantineProvider, createStyles } from '@mantine/core';
 import { useScrollLock } from '@mantine/hooks';
 import GlobalStyle from '../components/Mantine/GlobalStyle';
-import Header from '../components/Header';
-import SideNavbar from '../components/SideNavbar';
+import Header from '../components/Header/Header';
+import SideNavbar from '../components/SideNavbar/SideNavbar';
 
 const useStyles = createStyles(theme => ({
   wrapper: {

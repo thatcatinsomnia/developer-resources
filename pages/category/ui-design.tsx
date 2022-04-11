@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import type Resource from '../../interface/Resource';
-import ContentWrapper from '../../components/ContentWrapper';
-import ResourceCard from '../../components/ResourceCard';
+import ContentWrapper from '../../components/ContentWrapper/ContentWrapper';
+import ResourceCard from '../../components/ResourceCard/ResourceCard';
 import superjson from 'superjson';
 import prisma from '../../lib/prisma';
 

@@ -1,13 +1,5 @@
 import type { NextPage } from 'next';
-import { createStyles } from '@mantine/core';
-
-const useStyles = createStyles(theme => ({
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-    gap: '20px'
-  }
-}));
+import useStyles from './ContentWrapper.styles';
 
 interface Props {
   children: React.ReactNode;
