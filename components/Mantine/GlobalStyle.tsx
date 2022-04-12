@@ -7,7 +7,7 @@ const GlobalStyle = () => {
         '--side-nav-width': '260px',
         '--header-height': '76px',
         '--wrapper-max-width': '1600px',
-        '--main-bg-color': theme.fn.lighten(theme.colors.violet[0], 0.72)
+        '--main-bg-color': '#f8f6fa'
       },
 
       '*, *::before, *::after': {
