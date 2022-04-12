@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import type Resource from '../interface/Resource';
 import ContentWrapper from '../components/ContentWrapper/ContentWrapper';
-import ResourceCard from '../components/ResourceCard/ResourceCard';
+import Card from '../components/Card/Card';
 import superjson from 'superjson';
 import prisma from '../lib/prisma';
 
@@ -12,7 +12,7 @@ interface Props {
 const Home: NextPage<Props> = ({ resources }) => {
   return (
     <ContentWrapper>
-      {resources.map(resource => <ResourceCard resource={resource} key={resource.id} />)}
+      {resources.map(resource => <Card resource={resource} key={resource.id} />)}
     </ContentWrapper>
   );
 }

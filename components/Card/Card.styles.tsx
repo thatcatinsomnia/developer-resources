@@ -12,7 +12,6 @@ const useStyles = createStyles(theme => ({
     backgroundColor: 'white',
     display: 'flex',
     flexDirection: 'column',
-    boxShadow: '0 0 3px -2px rgba(0 0 0 / 13%)',
     cursor: 'pointer',
     overflow: 'hidden'
   },
