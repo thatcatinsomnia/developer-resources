@@ -19,7 +19,7 @@ const Header: NextPage<Props> = ({ opened, setOpened, setScrollLocked }) => {
   return (
     <header className={classes.header}>
       <div className={classes.headerInner}>
-        <MediaQuery largerThan="md" styles={{display: 'none'}}>
+        <MediaQuery largerThan="md" styles={{ display: 'none' }}>
           <Burger opened={opened} size={20} mr={20} onClick={openNav} />
         </MediaQuery>
 
@@ -28,8 +28,8 @@ const Header: NextPage<Props> = ({ opened, setOpened, setScrollLocked }) => {
           <span>Resources</span>
         </div>
 
-        <MediaQuery smallerThan="xs" styles={{display: 'none'}}>
-          <Button color="violet" className={classes.button}>新增資源</Button>
+        <MediaQuery smallerThan="xs" styles={{ display: 'none' }}>
+          <Button href="/new-resource" color="violet" component="a" className={classes.button}>新增資源</Button>
         </MediaQuery>
       </div>
     </header>
