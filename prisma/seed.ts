@@ -12,7 +12,7 @@ async function seedTag() {
   
     // reset id
     await prisma.$queryRaw`ALTER TABLE tag AUTO_INCREMENT = 1`;
-    console.log("reset tag id to 1");
+    console.log('reset tag id to 1');
   
     const res = await prisma.tag.createMany({
       data: tags
@@ -28,7 +28,7 @@ async function seedResource() {
 
   // reset id
   await prisma.$queryRaw`ALTER TABLE resource AUTO_INCREMENT = 1`;
-  console.log("reset resource id to 1");
+  console.log('reset resource id to 1');
 
   const res = await prisma.resource.createMany({
     data: resources
@@ -43,8 +43,8 @@ async function seedCategory() {
   console.log('clear table: category.');
 
   // reset id
-  await prisma.$queryRaw`ALTER TABLE resource AUTO_INCREMENT = 1`;
-  console.log("reset resource id to 1");
+  await prisma.$queryRaw`ALTER TABLE category AUTO_INCREMENT = 1`;
+  console.log('reset category id to 1');
 
   const res = await prisma.category.createMany({
     data: categories
