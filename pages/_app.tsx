@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
-import { MantineProvider, createStyles } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 import { useScrollLock } from '@mantine/hooks';
 import useStyles from './_app.styles';
 import GlobalStyle from '../components/Mantine/GlobalStyle';
