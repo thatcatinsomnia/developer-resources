@@ -12,7 +12,7 @@ const Card: NextPage<Props> = ({ resource }) => {
   const { classes } = useStyles();
 
   return (
-    <a href={resource.url} target="_blank" className={classes.cardWrapper}>
+    <a href={resource.url} className={classes.cardWrapper} target="_blank" rel="noreferrer noopener">
       <Paper p={30} radius="sm" shadow="xs" className={classes.card}>
         <Title order={2} mb={14}>{ resource.name }</Title>
         <Text mb={24} className={classes.text}>{ resource.description }</Text>
