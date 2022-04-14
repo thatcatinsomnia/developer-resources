@@ -4,7 +4,7 @@ import { memo } from 'react';
 import ContentWrapper from '../components/ContentWrapper/ContentWrapper';
 import superjson from 'superjson';
 import prisma from '../lib/prisma';
-import ResourceList from '../components/ResourceList';
+import ResourceList from '../components/ResourceList/ResourceList';
 
 interface Props {
   resources: Resource[];
