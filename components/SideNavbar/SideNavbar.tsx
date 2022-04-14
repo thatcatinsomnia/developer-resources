@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Stack, Burger, Text, Overlay, MediaQuery, Button } from '@mantine/core';
+import { Stack, Text } from '@mantine/core';
 import NavItem from '../NavItem/NavItem';
 import navs from '../../constants/navs';
 import useStyles from './sideNavbar.styles';

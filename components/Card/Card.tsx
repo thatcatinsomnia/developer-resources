@@ -2,8 +2,7 @@ import type { NextPage } from "next";
 import type Resource from "../../interface/Resource";
 import { Paper, Title, Text, Group } from '@mantine/core';
 import CardTag from "../CardTag/CardTag";
-import useStyles from './Card.styles';
-
+import useStyles from './card.styles';
 interface Props {
   resource: Resource
 };

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { Button, Burger, MediaQuery } from '@mantine/core';
-import useStyles from './Header.styles';
+import useStyles from './header.styles';
 
 interface Props {
   opened: boolean;
