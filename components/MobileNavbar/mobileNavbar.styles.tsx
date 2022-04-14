@@ -31,6 +31,10 @@ const useStyles = () => createStyles(theme => ({
     
   icon: {
     marginRight: '10px'
+  },
+
+  button: {
+    marginTop: 'auto'
   }
 }));
 

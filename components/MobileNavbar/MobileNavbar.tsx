@@ -34,7 +34,7 @@ const MobileNavbar: FC<Props> = ({ opened, setOpened, setScrollLocked, className
         ))}
       </Stack>
 
-      <Button href="/new-resource" component="a" color="violet">新增資源</Button>
+      <Button className={classes.button} href="/new-resource" component="a" color="violet">新增資源</Button>
     </nav>
   );
 };
