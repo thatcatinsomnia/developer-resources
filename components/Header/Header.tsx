@@ -20,7 +20,7 @@ const Header: NextPage<Props> = ({ opened, setOpened, setScrollLocked }) => {
     <header className={classes.header}>
       <div className={classes.headerInner}>
         <MediaQuery largerThan="md" styles={{ display: 'none' }}>
-          <Burger opened={opened} size={20} mr={20} onClick={openNav} />
+          <Burger opened={false} size={20} mr={20} onClick={openNav} />
         </MediaQuery>
 
         <div className={classes.titleBox}>
