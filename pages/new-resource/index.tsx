@@ -1,6 +1,6 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import { Title, Stack, TextInput, Select, Textarea, Button } from '@mantine/core';
-import useStyles from './index.styles';
+import useStyles from '../../styles/resource.styles';
 import prisma from '../../lib/prisma';
 
 interface Props {

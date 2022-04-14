@@ -16,7 +16,8 @@ const useStyles = createStyles(theme => ({
     padding: '40px 20px',
 
     [theme.fn.smallerThan('md')]: {
-      '--side-nav-width': 0
+      '--side-nav-width': 0,
+      padding: '40px 30px'
     }
   }
 }));

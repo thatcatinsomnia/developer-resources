@@ -1,21 +1,22 @@
 import type { NextPage } from 'next';
 import type Resource from '../interface/Resource';
+import { memo } from 'react';
 import ContentWrapper from '../components/ContentWrapper/ContentWrapper';
-import Card from '../components/Card/Card';
 import superjson from 'superjson';
 import prisma from '../lib/prisma';
+import ResourceList from '../components/ResourceList';
 
 interface Props {
   resources: Resource[];
 }
 
-const Home: NextPage<Props> = ({ resources }) => {
+const Home: NextPage<Props> = memo(function Home({ resources }) {
   return (
     <ContentWrapper>
-      {resources.map(resource => <Card resource={resource} key={resource.id} />)}
+      <ResourceList resources={resources} />
     </ContentWrapper>
   );
-}
+});
 
 export const getServerSideProps = async () => {
   const res = await prisma.resource.findMany({
