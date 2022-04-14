@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core';
 
-const useStyles = () => createStyles(theme => ({
+const useStyles = createStyles(theme => ({
   mobileNavbar: {
     padding: '86px 30px 30px',
     width: 'var(--side-nav-width)',
@@ -38,4 +38,4 @@ const useStyles = () => createStyles(theme => ({
   }
 }));
 
-export default useStyles();
+export default useStyles;
