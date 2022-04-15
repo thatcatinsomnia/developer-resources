@@ -6,17 +6,17 @@ import useStyles from './navItem.styles';
 
 interface Props {
   href: string;
-  onClickMobileNav: () => void;
+  handleClick?: () => void;
   children: React.ReactNode;
 }
 
-const NavItem: NextPage<Props> = ({ href, onClickMobileNav, children }) => {
+const NavItem: NextPage<Props> = ({ href, handleClick, children }) => {
   const { asPath } = useRouter();
   const { classes, cx } = useStyles();
   
   return (
     <Link href={href} passHref>
-      <Anchor className={cx(classes.navItem, {active: asPath === href})} onClick={onClickMobileNav}>
+      <Anchor className={cx(classes.navItem, {active: asPath === href})} onClick={handleClick}>
         {children}
       </Anchor>
     </Link>

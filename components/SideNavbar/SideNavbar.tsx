@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
-import { Stack, Text } from '@mantine/core';
-import NavItem from '../NavItem/NavItem';
-import navs from '../../constants/navs';
+import { Stack } from '@mantine/core';
+import NavList from '../../components/NavList/NavList';
 import useStyles from './sideNavbar.styles';
 
 interface Props {
@@ -14,12 +13,7 @@ const SideNavbar: NextPage<Props> = ({ className }) => {
   return (
     <nav className={cx(classes.navbar, className)}>
       <Stack spacing="xs">
-        {navs.map(nav => (
-          <NavItem href={nav.href} key={nav.href}>
-            <nav.icon size="22" className={classes.icon} />
-            <Text>{nav.name}</Text>
-          </NavItem>
-        ))}
+        <NavList />
       </Stack>
     </nav>
   );

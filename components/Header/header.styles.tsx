@@ -21,6 +21,7 @@ const useStyles = createStyles(theme => ({
   },
 
   titleBox: {
+    marginRight: 'auto',
     display: 'flex',
     flexDirection: 'column',
     fontSize: '20px',
@@ -30,7 +31,9 @@ const useStyles = createStyles(theme => ({
   },
 
   button: {
-    marginLeft: 'auto'
+    [theme.fn.smallerThan('sm')]: {
+      display: 'none'
+    }
   }
 }));
 
