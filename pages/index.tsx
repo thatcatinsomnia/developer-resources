@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import type Resource from '../interface/Resource';
-import { memo } from 'react';
 import ContentWrapper from '../components/ContentWrapper/ContentWrapper';
 import superjson from 'superjson';
 import prisma from '../lib/prisma';
@@ -10,13 +9,13 @@ interface Props {
   resources: Resource[];
 }
 
-const Home: NextPage<Props> = memo(function Home({ resources }) {
+const Home: NextPage<Props> = function Home({ resources }) {
   return (
     <ContentWrapper>
       <ResourceList resources={resources} />
     </ContentWrapper>
   );
-});
+};
 
 export const getServerSideProps = async () => {
   const res = await prisma.resource.findMany({
