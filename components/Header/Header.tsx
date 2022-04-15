@@ -3,16 +3,13 @@ import { Button, Burger, MediaQuery } from '@mantine/core';
 import useStyles from './header.styles';
 
 interface Props {
-  opened: boolean;
   setOpened: React.Dispatch<React.SetStateAction<boolean>>;
-  setScrollLocked: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Header: NextPage<Props> = ({ opened, setOpened, setScrollLocked }) => {
+const Header: NextPage<Props> = ({ setOpened }) => {
   const { classes } = useStyles();
   
   const openNav = () => {
-    setScrollLocked(true);
     setOpened(true);
   };
 
